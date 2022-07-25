@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link href="main.css" rel="stylesheet" type="text/css"/>
+        <title>E-wallet | Login</title>
+    </h:head>
+    <h:body>
+        <div class="authform"> 
+            <f:view>
+                <h:form>
+                    <h1><h:outputText value="Login"/></h1>
+                    <h:messages  id="error-message" class="error-message" infoClass="info" errorClass="error" fatalClass="fatal"/>
+                    <h:panelGrid columns="2">
+                        <h:outputLabel value="NationalId:" for="nationalId" />
+                        <h:inputText id="nationalId" value="#{ewallet.user.nationalId}" title="NationalId" />
+                        <h:outputLabel value="Password1:" for="password1" />
+                        <h:inputText id="password1" value="#{ewallet.user.password1}" title="Password1" />
+                        <h:commandButton action="#{ewallet.login()}" value="Login"/>
+                    </h:panelGrid>
+                    <h:commandButton action="#{ewallet.goToIndex()}" value="Go to Home"/>
+                </h:form>
+            </f:view>
+
+        </div>
+    </h:body>
+</html>
+
